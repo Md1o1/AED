@@ -2,69 +2,60 @@
 #include <math.h>
 #include <stdlib.h>
 
+void leitura();
 void soma();
 void subtracao();
 void multiplicacao();
 void divisao();
 
-int main() {
-    int operacao;
-    printf("selecione uma operacao: soma(1), subtracao(2), multiplicacao(3), divisao(4). \n");
-    scanf("%d", &operacao);
+int a, b;
+float r;
 
-    switch (operacao) {
-        case 1:
-            soma();
-            break;
-        case 2:
-            subtracao();
-            break;
-        case 3:
-            multiplicacao();
-            break;
-        case 4:
-            divisao();
-            break;
-        default:
-            printf("Error: Invalid operator.\n");
-            break;
-    }
+int main()
+{
+    int op;
+    printf("selecione uma operacao: soma(1), subtracao(2), multiplicacao(3), divisao(4). \n");
+    scanf("%d", &op);
+    leitura();
+    switch (op)
+    {
+    case 1:
+        soma();
+        break;
+    case 2:
+        subtracao();
+        break;
+    case 3:
+        multiplicacao();
+        break;
+    case 4:
+        divisao();
+        break;
+       }
+    printf("O resultado da operacao de %d + %d = %f\n", a, b, r);
     return 0;
 }
 
-void soma(){
-    int a, b, soma;
+void leitura()
+{
     printf("Digite um valor: ", a);
-    scanf("%d", &a); 
+    scanf("%d", &a);
     printf("Digite outro valor: ", b);
     scanf("%d", &b);
-    soma = a + b;
-    printf("A soma de %d + %d = %d\n", a, b, soma);
 }
-void subtracao(){
-    int a, b, subtracao;
-    printf("Digite um valor: ", a);
-    scanf("%d", &a); 
-    printf("Digite outro valor: ", b);
-    scanf("%d", &b);
-    subtracao = a - b;
-    printf("A subtracao de %d - %d = %d\n", a, b, subtracao);
+void soma()
+{
+    r = a + b;
 }
-void multiplicacao(){
-    int a, b, multiplicacao;
-    printf("Digite um valor: ", a);
-    scanf("%d", &a); 
-    printf("Digite outro valor: ", b);
-    scanf("%d", &b);
-    multiplicacao = a * b;
-    printf("A multiplicacao de %d * %d = %d\n", a, b, multiplicacao);
+void subtracao()
+{
+    r = a - b;
 }
-void divisao(){
-    int a, b, divisao;
-    printf("Digite um valor: ", a);
-    scanf("%d", &a); 
-    printf("Digite outro valor: ", b);
-    scanf("%d", &b);
-    divisao = a / b;
-    printf("A divisao de %d / %d = %d\n", a, b, divisao);
+void multiplicacao()
+{
+    r = a * b;
+}
+void divisao()
+{
+    r = a / b;
 }
