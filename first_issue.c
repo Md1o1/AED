@@ -16,6 +16,7 @@ int main()
     int op;
     printf("selecione uma operacao: soma(1), subtracao(2), multiplicacao(3), divisao(4). \n");
     scanf("%d", &op);
+    leitura();
     switch (op)
     {
     case 1:
